@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusBite | Canteen Pre-Order</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="/">
+      <span class="logo">CB</span>
+      <span>Campus<span class="accent">Bite</span></span>
+    </a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#checkout">My Order</a>
+      <a href="#history">Order History</a>
+    </nav>
+    <a href="#menu" class="nav-button">Order Now ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR CAMPUS. YOUR FOOD.</span>
+        <h1>Good food.<br><span class="accent">Zero waiting.</span></h1>
+        <p>Enjoy your favourite canteen snacks without waiting in a long queue. Choose your food, select a pickup time and make your break better.</p>
+        <a href="#menu" class="primary-button">Explore the menu →</a>
+        <div class="stats">
+          <div><strong>06</strong><small>Food choices</small></div>
+          <div><strong>Easy</strong><small>Quick ordering</small></div>
+          <div><strong>Fast</strong><small>Pickup slots</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="plate"><span>🥪</span></div>
+        <div class="floating top-tag">🍽️ Fresh favourites</div>
+        <div class="floating bottom-tag">☕ Your break, upgraded</div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">MADE FOR YOUR BREAK</span>
+          <h2>Find your <span class="accent">favourite.</span></h2>
+          <p>Fresh picks for your next lecture break.</p>
+        </div>
+        <span class="pill">6 items available</span>
+      </div>
+
+      <div class="menu-grid">
+        <article class="food-card">
+          <div class="food-picture bg-one"><span>🥪</span><small>STUDENT FAVOURITE</small></div>
+          <div class="food-info">
+            <div class="food-title"><h3>Veg Sandwich</h3><strong>₹40</strong></div>
+            <p>Toasted bread, fresh vegetables and chutney.</p>
+            <button class="add-button" type="button" data-add="sandwich">+ Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-picture bg-two"><span>🍔</span></div>
+          <div class="food-info">
+            <div class="food-title"><h3>Vada Pav</h3><strong>₹20</strong></div>
+            <p>A classic Mumbai street-food favourite.</p>
+            <button class="add-button" type="button" data-add="vadapav">+ Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-picture bg-three"><span>🥞</span></div>
+          <div class="food-info">
+            <div class="food-title"><h3>Masala Dosa</h3><strong>₹50</strong></div>
+            <p>Crispy dosa with a delicious potato filling.</p>
+            <button class="add-button" type="button" data-add="dosa">+ Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-picture bg-four"><span>🍔</span><small>TOP PICK</small></div>
+          <div class="food-info">
+            <div class="food-title"><h3>Veg Burger</h3><strong>₹60</strong></div>
+            <p>A hearty veggie patty with fresh lettuce.</p>
+            <button class="add-button" type="button" data-add="burger">+ Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-picture bg-five"><span>🍵</span></div>
+          <div class="food-info">
+            <div class="food-title"><h3>Masala Tea</h3><strong>₹15</strong></div>
+            <p>Warm, aromatic tea for a refreshing break.</p>
+            <button class="add-button" type="button" data-add="tea">+ Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-picture bg-six"><span>🥤</span></div>
+          <div class="food-info">
+            <div class="food-title"><h3>Cold Coffee</h3><strong>₹35</strong></div>
+            <p>Chilled coffee for your study session.</p>
+            <button class="add-button" type="button" data-add="coffee">+ Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="checkout-section" id="checkout">
+      <div class="checkout-copy">
+        <span class="eyebrow">ALMOST READY</span>
+        <h2>Your break,<br><span class="accent">your way.</span></h2>
+        <p>Enter your details, choose a pickup time and confirm your order.</p>
+        <div class="benefit">✓ &nbsp; Easy pre-ordering</div>
+        <div class="benefit">✓ &nbsp; Server-side validation</div>
+        <div class="benefit">✓ &nbsp; Automatic total calculation</div>
+      </div>
+
+      <div class="checkout-card">
+        <h3>Complete your order</h3>
+        <p class="muted">Student details and pickup information</p>
+
+        <form id="orderForm">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Student Name</label>
+              <input id="name" name="name" placeholder="e.g. Rahul Sharma" maxlength="50" required>
+            </div>
+            <div class="field">
+              <label for="roll">Roll Number</label>
+              <input id="roll" name="roll" placeholder="e.g. CE123" maxlength="20" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="pickup">Pickup Time</label>
+            <select id="pickup" name="pickup" required>
+              <option value="">Select a time slot</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="10:30">10:30 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="11:30">11:30 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="12:30">12:30 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="13:30">1:30 PM</option>
+            </select>
+          </div>
+
+          <div class="cart-heading">
+            <h4>Your Cart</h4>
+            <span id="cartCount">0 items</span>
+          </div>
+
+          <div id="cartItems" class="cart-items">
+            <p class="empty-cart">Your cart is empty. Add something delicious!</p>
+          </div>
+
+          <div class="total-row">
+            <span>Total Amount</span>
+            <strong id="cartTotal">₹0</strong>
+          </div>
+
+          <button class="submit-button" id="submitOrder" type="submit">Confirm Pre-Order →</button>
+          <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+          <p class="secure-note">Your order is checked by the Node.js server.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section history-section" id="history">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow">YOUR RECENT ACTIVITY</span>
+          <h2>Order <span class="accent">history.</span></h2>
+          <p>Your orders from the current server session.</p>
+        </div>
+        <button type="button" class="refresh-button" id="refreshOrders">↻ Refresh</button>
+      </div>
+      <div id="orderHistory" class="history-list">
+        <p class="empty-history">Your placed orders will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="/"><span class="logo">CB</span><span>Campus<span class="footer-accent">Bite</span></span></a>
+    <p>Made for better breaks on campus.</p>
+    <small>Web Technology Practical · Node.js & Express</small>
+  </footer>
+</body>
+</html>
